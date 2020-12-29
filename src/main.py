@@ -22,7 +22,9 @@ def string_adder(string1,string2):
             element = int(element)
             if(element < 0):
                 return Exception("negatives not allowed")
-                
+            if element > 1000:
+                element = 0
+                pass    
             result = result + int(element)
 
         for element in elements_1:
@@ -32,11 +34,21 @@ def string_adder(string1,string2):
         # elements_2 = re.findall(r'\d+', string2)
         elements_2 = [int(d) for d in re.findall(r'-?\d+', string2)]
         for element in elements_2:
+            if(element < 0):
+                return Exception("negatives not allowed")
+            if element > 1000:
+                element = 0
+                pass    
             result = result + int(element)
     elif(check_flag_1 == 1 and check_flag_2 == 0):
         # elements_1 = re.findall(r'\d+', string1)
         elements_2 = [int(d) for d in re.findall(r'-?\d+', string1)]
         for element in elements_1:
+            if(element < 0):
+                return Exception("negatives not allowed")
+            if element > 1000:
+                element = 0
+                pass    
             result = result + int(element)
 
     return result

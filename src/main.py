@@ -14,7 +14,14 @@ def string_adder(string1,string2):
     if not string2:
         check_flag_2 = 0
     if(check_flag_1 == 1 and check_flag_2 == 1):
-        result = int(string1) + int(string2)
+        elements_2 = string2.split(",")
+        elements_1 = string1.split(",")
+        for element in elements_2:
+            result = result + int(element)
+
+        for element in elements_1:
+            result = result + int(element)   
+
     elif(check_flag_1 == 0 and check_flag_2 == 1):
         elements_2 = string2.split(",")
         for element in elements_2:
@@ -29,4 +36,5 @@ def string_adder(string1,string2):
 
 
 if __name__ == "__main__":
-    adder = string_adder("1","2")
+    pass
+    # adder = string_adder("1","2")
